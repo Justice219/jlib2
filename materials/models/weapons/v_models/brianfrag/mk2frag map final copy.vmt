@@ -1,0 +1,12 @@
+VertexLitGeneric
+
+{
+	"$basetexture"	"models\weapons\v_models\brianfrag\Mk2Frag"
+	"$bumpmap" "models\weapons\v_models\brianfrag\Mk2Frag Map Final"
+	"$envmap" "env_cubemap"
+	"$normalmapalphaenvmapmask" 1
+	"$phong" "1"
+	"$phongexponent" "35"
+	"$phongboost" "1"	
+	"$phongfresnelranges"	"[1.5 10.1 7.1]"
+}
