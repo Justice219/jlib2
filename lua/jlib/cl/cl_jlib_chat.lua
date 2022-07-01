@@ -1,5 +1,4 @@
-JLIB = JLIB or {}
-JLIB.Client = JLIB.Client or {}
+jlib = jlib or {}
 
 -- Fonts
 for i = 1, 40 do
@@ -70,7 +69,6 @@ net.Receive("Player:Notification:Send", function()
     CreateNotification( nil, title, text )
 end)
 net.Receive("Justice:Notification:Chat", function()
-    print("go  ")
     local title = net.ReadString()
     local text = net.ReadString()
     chat.AddText(Color(255,0,0), "[" ..  title .. "]", Color(255,255,255), " " .. text)

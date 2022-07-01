@@ -1,6 +1,4 @@
-JLIB = JLIB or {}
-JLIB.Server = JLIB.Server or {}
-
+jlib = jlib or {}
 -- Locals
 local plyMeta = FindMetaTable("Player")
 util.AddNetworkString("Justice:Notification:Send")

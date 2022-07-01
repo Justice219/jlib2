@@ -1,4 +1,4 @@
-JLIB = JLIB or {}
+jlib = jlib or {}
 
 local plyMeta = FindMetaTable("Player")
 

@@ -1,6 +1,4 @@
-JLIB = JLIB or {}
-JLIB.Client = JLIB.Client or {}
-JLIB.Client.Derma = JLIB.Client.Derma or {}
+jlib = jlib or {}
 
 for i = 1, 40 do
     surface.CreateFont("F" .. tostring(i), {
@@ -13,7 +11,7 @@ function inQuad(fraction, beginning, change)
     return change * (fraction ^ 2) + beginning
 end
 
-function JLIB.Client.Derma.CreateNotification( parent, title, notification )
+function jlib.CreateNotification( parent, title, notification )
     local parent = parent or nil
     local scrw, scrh = ScrW(), ScrH()
     local frame = vgui.Create("DFrame", parent)
@@ -62,7 +60,7 @@ function JLIB.Client.Derma.CreateNotification( parent, title, notification )
     end
 end
 
-function JLIB.Client.Derma.CreateCustomNotification( parent, title, notification, color, rainbow )
+function jlib.CreateCustomNotification( parent, title, notification, color, rainbow )
     local parent = parent or nil
     local scrw, scrh = ScrW(), ScrH()
     local frame = vgui.Create("DFrame", parent)
@@ -117,7 +115,7 @@ function JLIB.Client.Derma.CreateCustomNotification( parent, title, notification
     end
 end
 
-function JLIB.Client.Derma.CreatePlayerNotification( parent, title, notification, ply )
+function jlib.CreatePlayerNotification( parent, title, notification, ply )
     local parent = parent or nil
     local scrw, scrh = ScrW(), ScrH()
     local frame = vgui.Create("DFrame", parent)
@@ -159,11 +157,11 @@ end
 net.Receive("Justice:Notification:Send", function()
     local title = net.ReadString()
     local text = net.ReadString()
-    JLIB.Client.Derma.CreateNotification( nil, title, text )
+    jlib.CreateNotification( nil, title, text )
 end)
 
 concommand.Add("Testcustom", function(ply, cmd, args)
     if !args[1] then return end
     -- Command, title, text, color, rainbow
-    JLIB.Client.Derma.CreateCustomNotification( nil, args[1], args[2], Color(args[3], args[4], args[5]), args[6] )
+    jlib.CreateCustomNotification( nil, args[1], args[2], Color(args[3], args[4], args[5]), args[6] )
 end)
